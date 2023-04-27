@@ -1,20 +1,12 @@
 ﻿namespace RateTheCar
 {
-    public class Car : CarBase
+    public class CarInMemory :CarBase
     {
         private List<float> score = new List<float>();
-        public Car(string brand, string model)
+        public CarInMemory(string brand, string model)
             : base(brand, model)
         {
         }
-        public string Brand
-        {
-            get; set;
-        }
-        public string Model 
-            {
-            get; set;
-            }
         public override void AddScore(int raiting)
         {
             float result = raiting;
@@ -57,3 +49,4 @@
 
     }
 }
+
