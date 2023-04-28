@@ -1,10 +1,11 @@
 ﻿namespace RateTheCar
 {
-    public class CarInMemory : CarBase
+    public class CarInFile :CarBase
     {
-        private List<float> score = new List<float>();
-        public CarInMemory() { }
-        public CarInMemory(string brand, string model)
+        private List<float> scoreInFile = new List<float>();
+        private const string fileName = "grades.txt";
+        public CarInFile() { }
+        public CarInFile(string brand, string model)
             : base(brand, model)
         {
         }
@@ -17,7 +18,10 @@
         {
             if (raiting >= 0 && raiting <= 10)
             {
-                this.score.Add(raiting);
+                using (var writen = File.AppendText(fileName))
+                {
+                    writen.WriteLine(raiting);
+                }
             }
             else
             {
@@ -40,13 +44,21 @@
         {
             var statistics = new Statistics();
 
-            foreach (var score in this.score)
+            if (File.Exists(fileName))
             {
-                statistics.AddGrade(score);
+                using (var reader = File.OpenText(fileName))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        var number = float.Parse(line);
+                        statistics.AddGrade(number);
+                    }
+                }
             }
-
             return statistics;
         }
+        
     }
 }
 

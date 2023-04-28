@@ -2,6 +2,9 @@
 {
     public abstract class CarBase : ICar
     {
+        public CarBase()
+        {
+        }
         public CarBase(string brand, string model)
         {
             this.Brand = brand;
@@ -14,6 +17,5 @@
         public abstract void AddScore(float raiting);
         public abstract void AddScore(string raiting);
         public abstract Statistics GetStatistics();
-
     }
 }

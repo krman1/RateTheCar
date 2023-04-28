@@ -3,6 +3,9 @@
     public class Car : CarBase
     {
         private List<float> score = new List<float>();
+        public Car()
+        {
+        }
         public Car(string brand, string model)
             : base(brand, model)
         {
@@ -54,6 +57,5 @@
 
             return statistics;
         }
-
     }
 }
