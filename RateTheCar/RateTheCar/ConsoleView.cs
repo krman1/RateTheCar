@@ -19,7 +19,8 @@ namespace RateTheCar
             switch (choice)
             {
                 case "1":
-                    CarInMemory carInMemory = new CarInMemory("Kia","Stinger");
+                    CarInMemory carInMemory = new CarInMemory();
+                    carInMemory.CreateCar();
                     while (true)
                     {
                         Console.WriteLine($"Podaj kolejną ocenę smochodu {carInMemory.Brand} {carInMemory.Model} w zakresie 0 - 10 lub q jesli chesz zakończyć");
@@ -45,7 +46,8 @@ namespace RateTheCar
                     break;
 
                 case "2":
-                    CarInFile carInFile = new CarInFile("Ford","Mustang");
+                    CarInFile carInFile = new CarInFile();
+                    carInFile.CreateCar();
                     while (true)
                     {
                         Console.WriteLine($"Podaj kolejną ocenę smochodu {carInFile.Brand} {carInFile.Model} w zakresie 0 - 10 lub q jesli chesz zakończyć");

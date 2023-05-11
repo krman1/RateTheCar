@@ -13,9 +13,31 @@
         public string Brand { get; set; }
         public string Model { get; set; }
 
-        public abstract void AddScore(int raiting);
+        public void AddScore(int raiting)
+        {
+            float result = raiting;
+            this.AddScore(result);
+        }
         public abstract void AddScore(float raiting);
-        public abstract void AddScore(string raiting);
+        public void AddScore(string raiting)
+        {
+            if (float.TryParse(raiting, out float result))
+            {
+                this.AddScore(result);
+            }
+            else
+            {
+                throw new Exception("Wrong string");
+            }
+        }
+        public CarBase CreateCar()
+        {
+            Console.Write("Wprowadź markę samochodu: ");
+            this.Brand = Console.ReadLine();
+            Console.Write("Wprowadź model samochodu: ");
+            this.Model = Console.ReadLine();
+            return this;
+        }
         public abstract Statistics GetStatistics();
     }
 }
