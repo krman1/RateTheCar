@@ -30,7 +30,7 @@
                 throw new Exception("Wrong string");
             }
         }
-        public CarBase CreateCar()
+        public ICar CreateCar()
         {
             Console.Write("Wprowadź markę samochodu: ");
             this.Brand = Console.ReadLine();

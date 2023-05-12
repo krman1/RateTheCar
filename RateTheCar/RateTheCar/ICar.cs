@@ -7,7 +7,7 @@
         void AddScore(int raiting);
         void AddScore(float raiting);
         void AddScore(string raiting);
-        CarBase CreateCar();
+        ICar CreateCar();
         abstract Statistics GetStatistics();
     }
 }
