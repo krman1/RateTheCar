@@ -32,9 +32,9 @@
         }
         public ICar CreateCar()
         {
-            Console.Write("Wprowadź markę samochodu: ");
+            Console.Write("Podaj markę samochodu: ");
             this.Brand = Console.ReadLine();
-            Console.Write("Wprowadź model samochodu: ");
+            Console.Write("podaj model samochodu: ");
             this.Model = Console.ReadLine();
             return this;
         }
