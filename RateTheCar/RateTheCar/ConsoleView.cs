@@ -10,7 +10,7 @@ namespace RateTheCar
             Console.WriteLine("Witamy w programie RateTheCar do oceny samochodów");
             Console.WriteLine("=================================================");
             Console.WriteLine();
-            Console.WriteLine("Co chcesz zrobić?");
+            Console.WriteLine("Wybierz jedną z poniższych opcji?");
             Console.WriteLine("1 - Dodoać oceny samochodu i zapisać w pamięci");
             Console.WriteLine("2 - Dodoać oceny samochodu i zapisać do pliku");
             Console.WriteLine("3 - Zakończyć program");
